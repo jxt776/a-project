@@ -39,3 +39,20 @@ html,body,#app{
 .el-drawer.rtl{
   width: 720px !important;
 }
+.el-table .cell{
+  text-align: center
+}
+.el-message-box .el-message-box__header .el-message-box__title span ::before{
+  content: "111";
+  color: red;
+}
+.el-upload-dragger{
+  width: 680px !important;
+  height: 140px !important;
+}
+.el-vue-search-box-container .search-box-wrapper .search-btn {
+  font-size: 14px;
+}
+.amap-sug-result{
+  z-index: 9999;
+}

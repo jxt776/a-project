@@ -4,6 +4,10 @@ import router from './router'
 import axios from 'axios'
 import './assets/css/global.css'
 
+//高德地图
+import './plugin/amap'
+
+
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
@@ -18,6 +22,8 @@ axios.interceptors.request.use(config=>{
   config.headers.token = window.sessionStorage.getItem('token')
   return config
 })
+
+Vue.prototype.$bus = new Vue()
 
 new Vue({
   router,

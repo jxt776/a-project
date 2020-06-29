@@ -6,6 +6,7 @@ const Main = () => import('../views/Main.vue')
 const User = () => import('../views/User.vue')
 const School = () => import('../views/School.vue')
 const Logs = () => import('../views/Logs.vue')
+const Spot = () => import('../views/Spot.vue')
 
 Vue.use(VueRouter)
 
@@ -25,7 +26,8 @@ Vue.use(VueRouter)
     children:[
         { path: '/Main/User', component: User },
         { path: '/Main/School', component: School },
-        { path: '/Main/Logs', component: Logs }
+        { path: '/Main/Logs', component: Logs },
+        { path: '/Main/Spot', component: Spot , name:'Spot' },
     ]
   }
 ]

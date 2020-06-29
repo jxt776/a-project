@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- 头部 -->
     <el-row>
       <el-col :span="9">
         <el-button @click="addClick" class="col_btn" type="success">新增</el-button>
@@ -10,6 +11,7 @@
         </el-input>
       </el-col>
     </el-row>
+    <!-- 表格 -->
     <el-table stripe border :data="userData" style="width: 100%">
       <el-table-column prop="_id" label="id" width="260"></el-table-column>
       <el-table-column prop="username" label="账号"></el-table-column>
@@ -19,12 +21,10 @@
       <el-table-column width="200" label="操作">
         <template slot-scope="scope">
           <el-button @click="editUserInfo(scope.row)" type="primary" size="mini">修改</el-button>
-
           <el-popconfirm @onCancel="cancelDelete" @onConfirm='deleteUserInfo(scope.row._id)' title="确定删除该账户吗？" placement="top">
             <el-button slot="reference" type="danger" size="mini">删除
             </el-button>
           </el-popconfirm>
-          <!-- <el-button type="danger" size="mini" @click="deleteUserInfo(scope.row._id)">删除</el-button> -->
         </template>
       </el-table-column>
     </el-table>
@@ -176,6 +176,12 @@ export default {
     },
     // 点击新增按钮
     addClick() {
+      this.userForm={
+        username: "",
+        password: "",
+        phone: "",
+        _id:""
+      }
       this.drawerVisible = true;
     },
     // 点击drawer叉号关闭
@@ -277,5 +283,8 @@ export default {
 }
 .search {
   margin-left: 30px;
+}
+.el-button--mini{
+  margin-right:10px ;
 }
 </style>

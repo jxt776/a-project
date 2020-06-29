@@ -47,7 +47,6 @@ export default {
   methods: {
     handleSelect(index) {
       this.activeIndex = index;
-      console.log(this.activeIndex);
     },
     quit() {
       window.sessionStorage.clear();
